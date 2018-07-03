@@ -5,6 +5,7 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import MovieList from './MovieList';
+import MovieDetails from './MovieDetails';
 
 
 const App = () => (
@@ -17,7 +18,7 @@ const App = () => (
       </header>
       <Switch>
         <Route exact path="/" component={MovieList} />
-        <Route path="/:id" component={Test} />
+        <Route path="/:id" component={MovieDetails} />
       </Switch>
     </div>
   </Router>
@@ -25,9 +26,3 @@ const App = () => (
 
 
 export default App;
-
-const Test = ({ match }) => (
-  <h1>
-    {match.params.id}
-  </h1>
-);
