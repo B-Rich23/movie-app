@@ -4,11 +4,9 @@ import './App.css';
 import Movie from './Movie';
 
 
-
 class App extends Component {
-
   state = {
-    movies: []
+    movies: [],
   }
 
   async componentDidMount() {
@@ -18,10 +16,10 @@ class App extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
-      })
-    } catch(e) {
-        console.log(e);
+        movies: movies.results,
+      });
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -32,7 +30,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />
+        {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />,
         )}
       </div>
     );
