@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router, Route, Switch, Link,
 } from 'react-router-dom';
 import logo from './logo.svg';
+import tmdb from './tmdb.svg';
 import './App.css';
 import MovieList from './MovieList';
 import MovieDetails from './MovieDetails';
@@ -16,6 +17,8 @@ const App = () => (
         <Link to="/">
           <img src={logo} className="App-logo" alt="logo" />
         </Link>
+        <img src={tmdb} className="App-tmdb" alt="tmdb" />
+
         <Search />
       </header>
       <Switch>
