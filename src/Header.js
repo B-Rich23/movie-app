@@ -6,7 +6,15 @@ import Movie from './Movie';
 class MovieList extends PureComponent {
   state = {
     movies: [],
+    input: '',
   }
+
+  updateInput = (e) => {
+    const value = e.target.value;
+    this.setState({
+        input: value
+    })
+
 
   async componentDidMount() {
     try {
@@ -24,6 +32,9 @@ class MovieList extends PureComponent {
 
   render() {
     return (
+      <div>
+        <input type='text' placeholder='New friend' value={this.state.input} onChange={this.updateInput} required />
+      </div>
       <MovieGrid>
         {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
       </MovieGrid>
